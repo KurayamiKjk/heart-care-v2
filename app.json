@@ -13,9 +13,16 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "foregroundImage": "",
+        "backgroundColor": "#ffffff",
+        "packet": "com.megatron.heartcare",
+        "compileSdkVersion": 35
+      },
+      "permissions": [
+        "READ_HEALTH_DATA",
+        "WRITE_HEALTH_DATA"
+      ],
+      "package": "com.thuyenhuynhkjk.heartcarev2"
     },
     "web": {
       "bundler": "metro",
@@ -25,6 +32,7 @@
     "plugins": [
       "expo-router",
       [
+        
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
@@ -32,10 +40,37 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
+      ],
+      "react-native-health",
+      "react-native-health-connect",
+      "expo-health-connect",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "minSdkVersion": 26
+          }
+        }
+      ],
+      [
+        "expo-dev-client",
+        {
+          "launchMode": "most-recent"
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f273d3a4-d997-4120-be3e-64df3d98a507"
+      }
     }
   }
 }
